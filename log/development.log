@@ -40,3 +40,204 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2019-12-19 12:18:37 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (8.1ms)
+Completed 200 OK in 86ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/Posts/new" for 127.0.0.1 at 2019-12-19 12:18:49 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/Posts/new"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.0.7) lib/rack/handler/webrick.rb:86:in `service'
+/home/jermain119/.rbenv/versions/2.6.5/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/home/jermain119/.rbenv/versions/2.6.5/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/home/jermain119/.rbenv/versions/2.6.5/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (7.9ms)
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (68.8ms)
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (402.9ms)
+Started GET "/posts/new" for 127.0.0.1 at 2019-12-19 12:19:12 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 861ms (Views: 829.7ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2019-12-19 12:19:24 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rXktnrO+vk5C4FEsut3NVLJOE9jFwaza8mj07eSHSNc/WfqrjiuhWcv8uN1s/RYNZZ6DKYPCFNMYurnzcMwkLg==", "title"=>"me", "description"=>"I am me", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "me"], ["description", "I am me"], ["created_at", "2019-12-19 18:19:24.372390"], ["updated_at", "2019-12-19 18:19:24.372390"]]
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 169ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-12-19 12:23:47 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (11.6ms)
+Completed 200 OK in 57ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2019-12-19 12:23:55 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 741ms (Views: 710.3ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2019-12-19 12:24:10 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xP6WzkU3V/OYQ4nUN66/zftEegO3a8/0GNa4PTsiSbpW3kH7eKJI5BFfYCXhjmSULJTq8vFod/3yBPUjr2klQw==", "title"=>"i am", "description"=>"me", "commit"=>"Submit Post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x00007f48e8c3c318>
+Did you mean?  try):
+  
+app/controllers/posts_controller.rb:18:in `create'
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (193.5ms)
+Started GET "/" for 127.0.0.1 at 2019-12-19 12:26:37 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (6.4ms)
+Completed 200 OK in 45ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2019-12-19 12:26:46 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 381ms (Views: 368.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2019-12-19 12:26:53 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PHvL9effqpFcpvb174S6t1DGHpKc/DcNOS12BBOT4UauWxzA2kq1htW6HwQ5pGHuhxaOY9r/jwTT/zsah9iNvw==", "title"=>"me", "description"=>"who\r\n", "commit"=>"Submit Post"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 566668ms (ActiveRecord: 0.6ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/posts_controller.rb:19:in `create'
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.2ms)
+Started POST "/posts" for 127.0.0.1 at 2019-12-19 12:36:26 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PHvL9effqpFcpvb174S6t1DGHpKc/DcNOS12BBOT4UauWxzA2kq1htW6HwQ5pGHuhxaOY9r/jwTT/zsah9iNvw==", "title"=>"me", "description"=>"who\r\n", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "me"], ["description", "who\r\n"], ["created_at", "2019-12-19 18:36:26.752874"], ["updated_at", "2019-12-19 18:36:26.752874"]]
+  [1m[35m (21.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:61488/posts/3
+Completed 302 Found in 55ms (ActiveRecord: 31.9ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2019-12-19 12:36:26 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 58ms (Views: 43.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-12-19 12:53:44 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (10.0ms)
+Completed 200 OK in 53ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2019-12-19 12:53:59 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 406ms (Views: 394.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2019-12-19 12:54:13 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vvLRb59ZYiBACZPXtwIpQgN5AVm8+J0AmxNz6V8ldMgs0gZaosx9N8kVeiZhIvIb1KmRqPr7JQlxwT73y24YMQ==", "title"=>"today", "description"=>"yesterday\r\n", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "today"], ["description", "yesterday\r\n"], ["created_at", "2019-12-19 18:54:13.693875"], ["updated_at", "2019-12-19 18:54:13.693875"]]
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:61488/posts/4
+Completed 302 Found in 19ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2019-12-19 12:54:13 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 95ms (Views: 82.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2019-12-19 12:54:42 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vvLRb59ZYiBACZPXtwIpQgN5AVm8+J0AmxNz6V8ldMgs0gZaosx9N8kVeiZhIvIb1KmRqPr7JQlxwT73y24YMQ==", "title"=>"can", "description"=>"i", "commit"=>"Submit Post"}
+Completed 500 Internal Server Error in 673120ms (ActiveRecord: 2.5ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/posts_controller.rb:19:in `create'
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/jermain119/.rvm/gems/ruby-2.6.3/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.0ms)
